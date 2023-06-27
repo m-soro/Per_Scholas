@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Super Awesome Tip Calculator</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial scale=1">
+  </head>
+  <body>
+    <header>
+      <span>Super Awesome Tip Calculator</span>
+    </header>
+    <div class="output">
+      <h2>Find out how much to tip!</h2>
+    </div>
+    <div class="check-input">
+      <label for="checkAmount" class="check-amount-label">Enter your check amount: </label>
+      <br><br>
+      <input type="number" id="checkAmount" name="checkAmount" value="100">
+    </div>
+    <div class="container">
+      <div class="column">
+        <form action="" class="quickTip">
+          <p class="no-margin">Select a Suggested Tip Percentage</p>
+          <br>
+          <input type="radio" name="quickTipOption" id="tip18" value="18">
+          <label for="tip18">18% Meh</label>  
+          <br>
+          <input type="radio" name="quickTipOption" id="tip20" value="20" checked>
+          <label for="tip20">20% Average</label> 
+          <br>
+          <input type="radio" name="quickTipOption" id="tip25" value="25">
+          <label for="tip25">25% Great</label> 
+          <br>
+          <input type="radio" name="quickTipOption" id="tip30" value="30">
+          <label for="tip30">30% Amazing!</label>  
+          <br><br>
+          <button type="button" onclick="calQuickTip()">
+          Calculate Quick Tip
+          </button>    
+        </form>
+      </div>
+      <div class="column">
+        <form action="" class="customTip">
+          <label for="customPercent">How many percent do you want to tip?</label>
+          <br><br>
+          <input type="number" id="customPercent" name="customPercent" value="22">
+          <br><br>    
+          <button type="button" id="customTipButton">Calculate Custom Tip</button>
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+</html>    
+ 

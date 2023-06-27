@@ -1,0 +1,91 @@
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+body {
+    background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    min-height: 100%;
+    font-family: 'Quicksand', sans-serif;
+    color: #444;
+}
+header {
+    width:100%;
+}
+span {
+    display: block;
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    color: #005792;
+}
+.output {
+    color:#005792;
+    text-align: center;
+}
+
+.container {
+    margin-top: 30px;
+    display: flex;
+    gap: 1rem;
+}
+.column {
+    padding: 30px 0px 30px 30px;
+    border-radius: 8px;
+    background-color:#d9f2ff;
+    flex: 1;
+}
+input[type=number]{
+    width: auto;
+    padding: 12px;
+    border: 1px solid #fffafa;
+    border-radius: 8px;
+    resize: vertical;
+    overflow: auto;
+}
+.check-input {
+    box-sizing: border-box;
+    display: flex;
+    text-align: center;
+    background-color:#d9f2ff;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 50%;
+    margin:auto;
+}
+.no-margin {
+    margin: 0;
+}
+.check-amount-label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+button {
+    font-family: inherit;
+    border: none;
+    border-radius: 8px;
+    background-color: #c8d9eb;
+    padding:15px;
+    min-height:20px;
+    min-width: 100px;
+    box-shadow: 3px 3px #999;
+}
+
+button:hover {
+    background-color: #8594e4
+}
+
+button:active {
+    background-color: #8594e4;
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+  }
+
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+   }
+    .column {
+        padding: 30px 0px 30px 40px;
+   }
+}

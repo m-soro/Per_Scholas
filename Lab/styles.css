@@ -1,0 +1,31 @@
+body {
+  font-family: Geneva, Verdana, sans-serif;
+  margin: 20px 20px;
+  color: #233142;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.heading {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.div-center {
+  text-align: center;
+}
+
+.image-catfish {
+  border-radius: 10px;
+  margin: 50px 0px;
+  width: 40%;
+  height: auto;
+}
+
+.recipe {
+  margin: 40px 30px;
+}
+
+li {
+  margin: 5px 0;
+}
