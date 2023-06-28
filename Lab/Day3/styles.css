@@ -1,0 +1,15 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Just lower the Nav Bar a bit*/
+.nav-class {
+  margin: 30px 0;
+}
+/*This is ul, set to display flex so list items displays evenly */
+/*Use justify content and list-style-type*/
+.nav-options {
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
