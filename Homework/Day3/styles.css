@@ -1,8 +1,9 @@
 /* Insert any CSS code below here */
 
 body {
-  background-color: white;
+  background-color: #fafafa;
   font-family: Comic Sans MS;
+  color: #3e4a61;
 }
 div {
   display: inline-block;
@@ -10,9 +11,10 @@ div {
   overflow: hidden;
   margin: 2px;
   background-color: white;
-  width: 200px;
-  height: 200px;
+  width: auto;
+  height: 250px;
   border: 2px solid black;
+  text-align: justify;
 }
 p {
   position: absolute;
@@ -20,12 +22,78 @@ p {
   bottom: -1em;
   border-top: 2px solid black;
   border-right: 2px solid black;
+  border-left: 2px solid black;
   padding: 5px;
   margin-right: -2px;
+  margin-left: 2px;
   font-size: 10pt;
 }
 img {
   max-height: 100%;
   display: block;
   margin: 0 auto;
+}
+
+h1,
+h4 {
+  text-align: center;
+}
+h4 {
+  font-style: italic;
+}
+
+.box {
+  width: auto;
+  height: 290px;
+}
+
+.box-1 {
+  box-shadow: 5px 2px fuchsia;
+  background-color: fuchsia;
+}
+
+.box-2 {
+  box-shadow: 5px 2px #38598b;
+  background-color: #38598b;
+}
+
+.box-3 {
+  box-shadow: 5px 2px #f95959;
+  background-color: #f95959;
+}
+
+.box-4 {
+  box-shadow: 5px 2px #142d4c;
+  background-color: #142d4c;
+}
+
+.box-5 {
+  box-shadow: 5px 2px #fd5959;
+  background-color: #fd5959;
+}
+
+.box-6 {
+  box-shadow: 5px 2px #393e46;
+  background-color: #393e46;
+}
+
+.box-7 {
+  box-shadow: 5px 2px #e85b48;
+  background-color: #e85b48;
+}
+
+.box-8 {
+  box-shadow: 5px 2px #ff0000;
+  background-color: #ff0000;
+}
+
+.music-vid {
+  box-shadow: 5px 2px #afc5ff;
+  background: #afc5ff;
+  margin: 15px 0;
+  padding: 35px 0;
+  width: auto;
+  height: 315;
+  display: flex;
+  justify-content: space-evenly;
 }
