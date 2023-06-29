@@ -1,0 +1,142 @@
+html,
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+  margin: 20px auto; /*So the contents are not pushed to the top*/
+  box-sizing: border-box;
+}
+header {
+  color: cornflowerblue;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+img {
+  border-radius: 10px;
+}
+
+/* THE FIRST SET OF DIVS */
+.parent-div {
+  display: flex; /*Give the divs flex properties*/
+  flex-wrap: wrap; /*This makes the child-divs wrap when screen is re-sized*/
+
+  width: 50%; /*Centers the parent-div inside the body*/
+  margin: auto; /*Centers the parent-div inside the body*/
+
+  margin-bottom: 50px; /*  For visual aid only */
+  background-color: aqua; /* For visual aid only*/
+
+  border-radius: 10px;
+  padding: 15px; /*This ensures that elements inside has a padding all over the 6 divs*/
+
+  row-gap: 10px;
+}
+
+.child-div {
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+
+  width: 150px;
+  height: 150px;
+  background-color: rebeccapurple;
+  border-radius: 10px;
+}
+
+/* END OF THE FIRST SET OF DIVS */
+/********************************/
+
+/* START OF SECOND FIRST SET OF DIVS */
+.parent-div-2 {
+  display: flex; /*Give the divs flex properties*/
+  flex-wrap: wrap; /*This makes the child-divs wrap when screen is re-sized*/
+
+  width: 50%; /*Centers the parent-div inside the body*/
+  margin: auto; /*Centers the parent-div inside the body*/
+
+  margin-bottom: 50px; /*  For visual aid only */
+  background-color: aqua; /* For visual aid only*/
+
+  border-radius: 10px;
+
+  /* padding: 15px; */ /*Purposely commented to show the difference between the two sets of divs*/
+
+  row-gap: 20px; /* This gives row separation for flex items*/
+  column-gap: 10px; /* This gives gap separation for flex items*/
+}
+
+.child-div-2 {
+  display: flex; /*These makes the individual divs a flexbox*/
+  justify-content: center; /* This align items horizontally */
+  align-items: center; /* This align items vertically */
+  margin: 0px auto; /*This auto calculates the margin for left and right. Take up available space.*/
+
+  width: 150px; /* Give div-boxes sizes*/
+  height: 150px;
+
+  background-color: rebeccapurple;
+  border-radius: 10px;
+}
+
+/* END OF THE SECOND SET OF DIVS */
+/********************************/
+
+/* STYLING WHAT IS INSIDE THE DIVS */
+
+.div3,
+.div4,
+.child-div-2.div3,
+.child-div-2.div4 {
+  width: 300px; /* Make div 3 and 4 wider */
+  height: 150px;
+}
+
+p {
+  padding: 10px;
+  /* text-align: center; */ /*This will center the TEXT*/
+}
+
+.div1 p {
+  color: white;
+}
+
+.div2 p {
+  color: chartreuse;
+}
+
+.div3 p {
+  color: cyan;
+}
+.div4 p {
+  color: honeydew;
+}
+
+.div5 p {
+  color: yellow;
+}
+
+.div6 p {
+  color: seashell;
+}
+
+/* Style the Numbers*/
+.parent-div-2 p {
+  font-size: 3em;
+  text-align: center;
+}
+
+/* END OF STYLING WHAT IS INSIDE THE DIVS */
+/*****************************************/
+
+.explanation-container {
+  display: flex;
+  width: 50%;
+  margin: auto;
+  border: 10px solid cyan;
+}
+
+.explanation {
+  padding: 10px;
+  width: 90%;
+  margin: auto;
+}

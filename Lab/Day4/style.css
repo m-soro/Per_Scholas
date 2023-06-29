@@ -1,0 +1,36 @@
+/* Insert any CSS code below here */
+body {
+  background-color: khaki;
+  margin: 20px;
+  width: 500px;
+  height: 750px;
+}
+.main {
+  text-align: justify;
+  overflow: hidden;
+  border: 5px dashed peru;
+  width: 500px;
+  height: 750px;
+  padding: 20px;
+}
+
+h3,
+h1 {
+  text-align: center;
+  color: crimson;
+}
+
+img {
+  width: 400px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.center {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.underline {
+  text-decoration-line: underline;
+}
