@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #fafafafa;
+  line-height: 1.5em;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+div {
+  background-color: #9896f1;
+}
+
+.grid-container {
+  margin: 5rem auto;
+  padding: 1em;
+  width: min(90%, 75rem);
+  display: grid;
+  gap: 2em;
+  background-color: aqua;
+  /* explicitly tell the with of the columns*/
+  /* grid-template-columns: 1fr 1fr 1fr 0.5fr; */
+
+  /* or - exlicitly telling the width of the columns*/
+  /* grid-template-columns: 25% 50% 25%; */
+
+  /* or - this one just makes automatically creates a column or could be row by default*/
+  grid-auto-flow: row;
+
+  /* This makes sure the columns are even*/
+  grid-auto-columns: 1fr;
+}
+
+/* When the overall size of the grid is less than < 501px change the layout to columns */
+/* Stack one on top of the other */
+@media (min-width: 501px) {
+  .grid-container {
+    grid-auto-flow: column;
+  }
+}

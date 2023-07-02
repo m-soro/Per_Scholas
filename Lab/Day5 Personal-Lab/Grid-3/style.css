@@ -1,0 +1,82 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: antiquewhite;
+  display: grid;
+  grid-gap: 1em;
+  /* Meaning auto size for header, auto for nav, 1fr or whatever space available for main */
+  /* Auto for footer */
+  /* If this is not set - these 4 rows will expand in the same spacing */
+  grid-template-rows: auto auto 1fr auto;
+  /* The height of the body is height of viewport - this pushes the footer to the bottom at all times */
+  min-height: 100vh;
+}
+
+/* For browser over 40 em width */
+/* can also be written as (width > 40em)*/
+@media (min-width: 40em) {
+  /* SIMPLIFY BY USING GRID AREAS */
+
+  body {
+    grid-template-columns: 12em 1fr;
+    grid-template-rows: auto 1fr auto;
+    /* This is where the 'magic happens' */
+    grid-template-areas:
+      "nav banner"
+      "nav main"
+      "footer main";
+  }
+  /* Give the Grid Area Names: */
+  header {
+    grid-area: banner;
+  }
+  nav {
+    grid-area: nav;
+  }
+  main {
+    grid-area: main;
+  }
+  footer {
+    grid-area: footer;
+  }
+}
+
+/* body { */
+
+/* This means a left column has 12em, and 1 fr or what ever space on right side */
+/* This also stacks on top of each other when re-sized */
+
+/* grid-template-columns: 12em 1fr; */
+
+/* You can specify how many rows - here we say three rows*/
+
+/* grid-template-rows: auto 1fr auto; */
+/* } */
+
+/* Tell Header to span two columns - right now we have two columns - so the whole width*/
+/* header {
+    grid-column: span 2;
+  } */
+
+/* Tell nav to span two rows - vertically - so thats all the way to footer */
+/* nav {
+    grid-row: span 2;
+  } */
+
+header {
+  background-color: #e0ffcd;
+}
+nav {
+  background-color: #ff9a3c;
+}
+main {
+  background-color: #ffb5b5;
+}
+
+footer {
+  background-color: #edb1f1;
+}
+
+ul li {
+  list-style-type: none;
+  display: inline;
+}
