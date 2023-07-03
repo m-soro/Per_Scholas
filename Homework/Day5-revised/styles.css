@@ -1,0 +1,128 @@
+/* RESET STYLE*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* REQUIRED STYLING */
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #d6d6d6;
+  line-height: 1.7;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: #ff3300;
+  font-weight: bold;
+}
+/* END OF REQUIRED STYLING */
+
+/* HEADER STYLING */
+header {
+  width: 100%;
+  height: 230px;
+  background-image: url("https://raw.githubusercontent.com/m-soro/Per_Scholas/main/Homework/Day5/background.jpg");
+  background-repeat: repeat-x;
+}
+
+/* PARENT CONTAINER OF THE LOGO*/
+/* SET TEXT ALIGN CENTER */
+.logo-container {
+  text-align: center;
+}
+
+/* SET MARGIN TOP TO SHIFT THE LOGO DOWN A BIT FROM THE TOP*/
+.logo-container img {
+  display: inline;
+  margin-top: 1.6em;
+}
+/* END OF HEADER STYLING */
+
+/* BODY STYLING */
+
+.column-container {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr 0.5fr 0.5fr; /* Create 4 columns */
+  grid-template-rows: auto;
+  grid-template-areas: " .  articles aside . "; /* Assign whers is who in the 4 columns */
+  gap: 2em;
+  margin: 4em 0 10em 0;
+}
+
+.column-1,
+.column-2 {
+  background-color: #fafafa;
+}
+
+/* ARTICLE AREA COLUMN STYLES AKA COLUMN-1*/
+.column-1 {
+  grid-area: articles;
+  height: fit-content;
+}
+
+article {
+  padding: 1.5em;
+}
+
+/* TO AUTO-CONTAIN THE IMAGES INSIDE PARENT ELEMENT */
+article img,
+.ads img {
+  height: auto;
+  width: 100%;
+}
+
+.ads img {
+  margin: 1em 0;
+}
+
+.text {
+  padding: 0.8em 0 0.8em 0; /* top right bottom left*/
+}
+
+/* STYLING THE BOTTOM HORIZONTAL RULE */
+.article-btm-hr {
+  border-top: 0.1em solid;
+}
+
+/* ASIDE COLUMN STYLES AKA COLUMN-2*/
+.column-2 {
+  grid-area: aside;
+  font-weight: bold;
+  height: max-content;
+}
+
+.column-2 ul {
+  margin: 2em 1.2em 2em 1.2em; /* top right bottom left*/
+}
+
+.column-2 ul p {
+  text-align: left;
+}
+
+.column-2 ul li {
+  list-style-type: none;
+  text-align: left;
+}
+
+/* FOOTER STYLING */
+footer {
+  height: 6em;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+ul {
+  justify-content: center;
+  text-align: center;
+  margin-top: 0.7em;
+}
+footer li {
+  display: inline-block;
+}
+/* END OF FOOTER STYLING */
