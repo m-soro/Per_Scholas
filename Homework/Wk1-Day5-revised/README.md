@@ -4,4 +4,4 @@
 
 ## [Mock up page link-hosted on repl](https://create-a-mock-up-site.msoro.repl.co/)
 
-![image](https://raw.githubusercontent.com/m-soro/Per_Scholas/main/Homework/Day5/screenshot-final.png)
+![image](https://github.com/m-soro/Per_Scholas/blob/main/Homework/Wk1-Day5/screenshot-final.png?raw=true)
