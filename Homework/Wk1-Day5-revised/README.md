@@ -2,6 +2,6 @@
 
 ## [Mock up page link](https://m-soro.github.io/Per_Scholas/Homework/Day5-revised/index.html)
 
-## [Mock up page link-hosted on repl](https://create-a-mock-up-site.msoro.repl.co/)
+## [Mock up page link-hosted on repl](https://create-mock-up-site-not-final.msoro.repl.co/)
 
 ![image](https://github.com/m-soro/Per_Scholas/blob/main/Homework/Wk1-Day5/screenshot-final.png?raw=true)
