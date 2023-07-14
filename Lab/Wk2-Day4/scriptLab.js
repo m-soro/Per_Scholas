@@ -18,20 +18,24 @@ DIFF    0, 10, 20, 30, 40 | 40, 30, 20, 10,  0
 
 */
 
+// Solution 1
 console.log("\nExcercise1 - Solution 1 \n");
 
 let firstFiveCounter = 1;
 let secondFiveCounter = 5;
+let firstRow = "";
+let secondRow = "";
 
 for (let j = 1; j <= 10; j++) {
   if (j <= 5) {
     firstFiveCounter++;
-    console.log((firstFiveCounter - 2 + j) * 10);
+    firstRow = firstRow + (firstFiveCounter - 2 + j) * 10 + ", ";
   } else if (j >= 6) {
     secondFiveCounter--;
-    console.log((j - secondFiveCounter) * 10);
+    secondRow = secondRow + (j - secondFiveCounter) * 10 + ", ";
   }
 }
+console.log(`${firstRow}\n${secondRow}`);
 
 // Solution 2
 console.log("\nExcercise1 - Solution 2 - Using Arrays\n");
