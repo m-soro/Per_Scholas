@@ -1,4 +1,7 @@
 /**
+ * REPL @link https://replit.com/@msoro/Pre-Course-Pt-2-CSX-Challenges-Solutions#index.js
+ */
+/**
  * --------------------------------------
  * CHALLENGE: ARRAYS - EXAMINING ELEMENTS
  * --------------------------------------
@@ -262,7 +265,7 @@ for (let key in checkObj) {
  * Using a for... in loop, fill the array with all of the numbers from the
  * checkObj object if they are greater than or equal to 2.
  */
-const checkObj = {
+const checkObject = {
   oddNum: 1,
   evenNum: 2,
   foundNum: 5,
@@ -272,9 +275,9 @@ const checkObj = {
 const objToArray = [];
 // ADD CODE HERE
 
-for (let x in checkObj) {
+for (let x in checkObject) {
   if (checkObj[x] >= 2) {
-    objToArray.push(checkObj[x]);
+    objToArray.push(checkObject[x]);
   }
 }
 
@@ -287,7 +290,7 @@ for (let x in checkObj) {
  * through objToArray and determine if any of the numbers are divisible by 6.
  * If so, reassign the value of divBy6 to true.
  */
-const checkObj = {
+const checkObject1 = {
   oddNum: 1,
   evenNum: 2,
   foundNum: 5,
@@ -296,11 +299,11 @@ const checkObj = {
 
 let divBy6 = false;
 // ADD CODE HERE
-const objToArray = Object.values(checkObj);
+const objToArray1 = Object.values(checkObject1);
 
 objToArray.forEach((x) => (x % 6 === 0 ? (divBy6 = true) : divBy6));
 
-console.log(objToArray);
+console.log(objToArray1);
 
 /**
  * -----------------------------------
