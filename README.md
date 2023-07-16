@@ -16,5 +16,3 @@ This will contain my course work for Software Engineering track.
   - Miscellaneous files. Resources.
 - [Notes](Notes/)
   - Some things that I want to remember.
-
-MSoro
