@@ -1,6 +1,5 @@
 /**
- * REPL LINK
- * @link https://replit.com/@msoro/Wk3-Day1-HW
+ * [REPL LINK]{@linkhttps://replit.com/@msoro/Wk3-Day1-HW}
  */
 /**
  * (1) (GIVEN EXAMPLE)
