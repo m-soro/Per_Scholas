@@ -1,10 +1,18 @@
 # Per Scholas Software Engineering
 
-This will contain my work in this program
+[Software Engineering Syllabus](files/SESyllabusMERN.pdf)
+
+This will contain my course work for Software Engineering track.
 
 - [Homework](Homework/)
+  - These are my submitted assignments.
+- [Lab](Lab/)
+  - These are scripts that I use to code along in the class.
+  - Part scratch pad.
+  - Contains code challenges from different websites such CSX, CodeAcademy, some LinkedIn Learning.
+  - Testing scripts, my 'learning by practicing'
 - [Projects](Projects/)
 - [Resources](Resources/)
+  - Miscellaneous files. Resources.
 - [Notes](Notes/)
-
-[View the Per Scholas Syllabus](files/SESyllabusMERN.pdf)
+  - Some things that I want to remember.
