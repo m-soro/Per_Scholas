@@ -388,8 +388,8 @@ function addN(arr, n) {
 }
 
 // Uncomment these to check your work!
-console.log(addN([1, 2, 3], 3)); // expected log [4, 5, 6]
-console.log(addN([3, 4, 5], 2)); // expected log [5, 6, 7]
+// console.log(addN([1, 2, 3], 3)); // expected log [4, 5, 6]
+// console.log(addN([3, 4, 5], 2)); // expected log [5, 6, 7]
 
 /**
  * ----------------------------------------------
@@ -407,8 +407,8 @@ function getTheSum(arr) {
 }
 
 // Uncomment these to check your work!
-console.log(getTheSum([3, 6, 9])); // expected log 18
-console.log(getTheSum([10, 11, 12])); // expected log 33
+// console.log(getTheSum([3, 6, 9])); // expected log 18
+// console.log(getTheSum([10, 11, 12])); // expected log 33
 
 /**
  * -----------------------
@@ -630,3 +630,136 @@ function addingAllTheWeirdStuff(array1, array2) {
 // Uncomment these to check your work!
 // console.log(addingAllTheWeirdStuff([1, 3, 5, 17, 15], [1, 2, 3, 4, 5])); // expected log [10, 12, 14, 23, 22]
 // console.log(addingAllTheWeirdStuff([1, 3, 5, 17, 15, 1], [1, 2, 3, 4, 5, 22])); // expected log [11, 13, 15, 46, 44, 11]
+
+/**
+ * ----------------------
+ * CHALLENGE: DISEMVOWEL
+ * ----------------------
+ * Write a function disemvowel that takes in a string
+ * and returns a new string with all vowels removed.
+ */
+function disemvowel(string) {
+  // ADD CODE HERE
+  let vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+  let sansVowels = "";
+  for (let i = 0; i < string.length; i++) {
+    !vowels.includes(string[i]) && (sansVowels += string[i]);
+  }
+  return sansVowels;
+}
+
+// Uncomment these to check your work!
+// console.log(disemvowel("CodeSmith")); // => 'CdSmth'
+// console.log(disemvowel("BANANA")); // => 'BNN'
+// console.log(disemvowel("hello world")); // => 'hll wrld'
+
+/**
+ * --------------------
+ * CHALLENGE: ADDWALDO
+ * --------------------
+ * Create a function addWaldo that accepts an object with keys being first names
+ * and values being last names. For example:
+ * addWaldo({'Luke': 'Skywalker', 'Harley': 'Quinn', 'Ryan': 'Reynolds'})
+ * should add the key 'Waldo' with the value 'unknown' to the object and return the mutated object.
+ */
+
+// ADD CODE HERE
+const addWaldo = (obj) => {
+  return Object.assign(obj, { Waldo: "unknown" });
+};
+
+// Uncomment these to check your work!
+const siliconValley = {
+  Richard: "Hendricks",
+  Erlich: "Bachman",
+  Bertram: "Gilfoyle",
+};
+// console.log(addWaldo(siliconValley)); // should log:{ Richard: 'Hendricks', Erlich: 'Bachman', Bertram: 'Gilfoyle', Waldo: 'unknown' }
+
+/**
+ * ---------------------
+ * CHALLENGE: FINDWALDO
+ * ---------------------
+ * Create a function findWaldo that accepts an object and
+ * returns the value associated with the key 'Waldo'. If the key 'Waldo' is
+ * not found, the function should return 'Where's Waldo?'
+ */
+
+const findWaldo = (obj) => ("Waldo" in obj ? "unknown" : "Where's Waldo?");
+// ADD CODE HERE
+
+// Uncomment these to check your work!
+const DC = { Bruce: "Wayne", Harley: "Quinn" };
+const supernatural = {
+  Sam: "Winchester",
+  Dean: "Winchester",
+  Waldo: "unknown",
+};
+// console.log(findWaldo(DC)); // should log: 'Where's Waldo?'
+// console.log(findWaldo(supernatural)); // should log: 'unknown'
+
+/**
+ * ------------------------
+ * CHALLENGE: ARRAYBUILDER
+ * ------------------------
+ * Write a function arrayBuilder that takes in a count object and returns an array
+ * filled with the appropriate numbers of elements. The order of the elements in the array does not matter,
+ * but repeated elements should be grouped.
+ */
+
+function arrayBuilder(object) {
+  // ADD CODE HERE
+  // Define empty array
+  const resArray = [];
+  // Loop thru  properties and values
+  for (let property in object) {
+    // If object properties is greater than 1
+    if (object[property] > 1) {
+      // Repeat pushing to the array up to N times
+      for (let i = 0; i < object[property]; i++) {
+        resArray.push(property);
+      }
+    } else {
+      // push once
+      resArray.push(property);
+    }
+  }
+  return resArray;
+}
+
+// Uncomment these to check your work!
+// console.log(arrayBuilder({ cats: 2, dogs: 1 })); // => ['cats', 'cats', 'dogs']
+// console.log(arrayBuilder({})); // => []
+// console.log(arrayBuilder({ laptop: 4, bag: 3 }));
+
+/**
+ * -------------------------------------------
+ * CHALLENGE: FUNCTIONS - FUNCTION EXPRESSION
+ * -------------------------------------------
+ * Convert the function named functionDeclaration to an
+ * anonymous function expression and assign it to a variable called myFunc.
+ */
+// MODIFY THE CODE BELOW
+function functionDeclaration() {
+  return "Hi there!";
+}
+
+const myFunc = function () {
+  return "Hi there!";
+};
+// console.log(myFunc()); //should log: "Hi there!"
+
+/**
+ * ---------------------------
+ * CHALLENGE: FUNCTIONS - ES6
+ * ---------------------------
+ * For this challenge, convert the function myJob from ES5 syntax to arrow function syntax.
+ */
+// function myJob(name, profession) {
+//   return `Hi, my name is ${name} and I'm a ${profession}.`;
+// }
+
+const myJob = (name, profession) =>
+  `Hi, my name is ${name} and I'm a ${profession}.`;
+
+console.log(myJob("Jon", "Knights Watchman"));
