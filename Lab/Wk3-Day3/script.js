@@ -258,12 +258,10 @@ frodo.steal();
 frodo.smite();
 
 /**
- * -----------------
- * CREATE A FACTORY
- * -----------------
- * An object that creates another object
- * Also called a 'singleton'
- *
+ * -----------------------------------------
+ * AN OBJECT THAT CREATES ANOTHER OBJECT
+ * -----------------------------------------
+ * Also called a singleton
  */
 
 class Car {
@@ -278,6 +276,11 @@ class Car {
 
 const newCar = new Car("Mazda", 123456);
 
+/**
+ * -----------------
+ * AN OBJECT FACTORY
+ * -----------------
+ */
 class Factory {
   constructor(company) {
     this.company = company;
