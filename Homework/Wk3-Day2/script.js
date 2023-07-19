@@ -32,14 +32,14 @@ class Cat {
   }
 }
 console.log("\nExercise 1 - Creating Classes\n");
-const cat1 = new Cat("white", "8lbs", false);
+const cat1 = new Cat("Meeyowza", "white", "8lbs", false);
 console.log("Cat 1\n");
 console.log(cat1);
 console.log(cat1.meow());
 console.log(cat1.makeFriendly());
 console.log(cat1);
 
-const cat2 = new Cat("brown", "10lbs", true);
+const cat2 = new Cat("Cutiecat", "brown", "10lbs", true);
 console.log("Cat2\n");
 console.log(cat2);
 console.log(cat1.scratch());

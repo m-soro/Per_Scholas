@@ -278,7 +278,7 @@ const newCar = new Car("Mazda", 123456);
 
 /**
  * -----------------
- * AN OBJECT FACTORY
+ *  OBJECT FACTORY
  * -----------------
  */
 class Factory {
