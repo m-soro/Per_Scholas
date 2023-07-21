@@ -507,6 +507,23 @@ const fightClub = (name) => {
 console.log(fightClub("Teo"));
 console.log(fightClub("Liv"));
 console.log(fightClub("Mark"));
+
+console.log("\n======== OR ========\n");
+
+console.log("\n======== OBJECT LITERALS AS LOOK UP TABLE ========\n");
+function fightClub2(name) {
+  const theClub = {
+    Teo: "1st rule: You do not talk about Fight Club.",
+    Manara: "2nd rule: YOU DO NOT TALK ABOUT FIGHT CLUB.",
+    Liv: '3rd rule: If someone yells "Stop!", goes limp, taps out, the fight is over.',
+    Devin: "4th rule: Only two guys to a fight.",
+  };
+  return theClub[name] ?? "No shirts";
+}
+
+console.log(fightClub2("Teo"));
+console.log(fightClub2("Liv"));
+console.log(fightClub2("Mark"));
 // Create a function called hello() that prints 'Hello'. Return an anonymous function inside hello() and have it print 'Goodbye'. Invoke your hello function in some way to see Hello and Goodbye in the console.
 console.log("\n======== ANONYMOUS FUNCTION INSIDE A FUNCTION ========\n");
 const hello = () => {

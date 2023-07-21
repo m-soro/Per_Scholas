@@ -26,3 +26,7 @@ Without the `!` it will print `undefined` Its its way of handling `else`
 With the `!` I'm eliminating the `false` or `else` statement.
 
 **end**
+
+[Alternative to if else](https://dev.to/b3ns44d/alternative-to-if-else-and-switch-object-literals-in-javascript-3nde)
+
+> Some cool ways to use objects as a look up table
