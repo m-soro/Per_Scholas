@@ -518,7 +518,7 @@ function fightClub2(name) {
     Liv: '3rd rule: If someone yells "Stop!", goes limp, taps out, the fight is over.',
     Devin: "4th rule: Only two guys to a fight.",
   };
-  return theClub[name] ?? "No shirts";
+  return theClub[name] ?? "No shirts"; // Null coalescing operator(??) @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing
 }
 
 console.log(fightClub2("Teo"));
