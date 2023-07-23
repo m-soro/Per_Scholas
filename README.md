@@ -10,8 +10,8 @@ This will contain my course work for Software Engineering track.
   - These are the scripts that I use to code along in the class.
   - Part scratch pad.
   - Contains code challenges from different websites such CSX, CodeAcademy, some LinkedIn Learning.
-  - [CSX][Lab/CodeChallenge-CSX/]
-  - [LinkedIn Learning][Lab/CodeChallenge-LinkedIN/]
+  - [CSX](Lab/CodeChallenge-CSX/)
+  - [LinkedIn Learning](Lab/CodeChallenge-LinkedIN/)
 - [Projects](Projects/)
 - [Resources](Resources/)
   - Miscellaneous files. Resources.
