@@ -218,12 +218,54 @@ const adventurer = {
 // console.log(dogName);
 // Expected output: undefined
 
-const dogName = adventurer.dog.name;
-console.log(dogName);
+// const dogName = adventurer.dog.name;
+// console.log(dogName);
 // without optional chaining .? this will break
 
 console.log(adventurer.someNonExistentMethod?.());
 // Expected output: undefined
 
-let day = "friday";
-console.log(day === "friday" ?? "no");
+/**
+ * --------------------------------
+ * THE NULLISH COALESCING OPERATOR
+ * --------------------------------
+ * conditional ?? fallbackExpression
+ */
+
+const person = {
+  name: "Becky",
+  gender: null,
+};
+// Value is present
+const name = person.name ?? "Unknown person";
+console.log(name);
+
+// Value is not present
+const gender = person.gender ?? "Unknown gender";
+console.log(gender);
+
+// Ternary - working as expected
+// let day = "friday";
+// let x = () => `Not the day!`;
+// let y = () => `Today is the day!`;
+// let result1 = day === "friday" ? y() : x();
+
+// console.log(result1);
+
+// day === "friday" ? console.log("Today is the day!") : console.log("Not today!");
+
+/**
+ * -------------------
+ * NULLISH COALESCING
+ * -------------------
+ * It first checks if a value is null, IF NOT then it will return the value
+ *
+ */
+
+let aDay;
+let today = aDay ?? "Friday";
+console.log(today);
+
+let day = "Monday";
+day ??= "Friday";
+console.log(day);

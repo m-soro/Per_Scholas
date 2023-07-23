@@ -341,6 +341,8 @@ console.log("\n======== SLICE() ========\n");
 console.log(allFruits.slice(-2));
 
 // Monalissa said she needs help re-organizing her items in alphabetical order.
+// sort() mutates the original array.
+// toSorted() does not mutate the original array
 console.log("\n======== SORT() ========\n");
 const monalissaIsMessy = ["pencil", "paper", "notebook", "computer"];
 console.log(monalissaIsMessy.sort());
@@ -356,6 +358,7 @@ const mirrorMirrorOnTheWall = [
   "who",
 ];
 console.log("\n======== REVERSE() ========\n");
+// reverse() mutates the orginal array
 console.log(mirrorMirrorOnTheWall.reverse());
 
 // ===== HIGHER ORDER METHODS =====
@@ -383,8 +386,11 @@ const addedUp = (array) => {
     (accumulator, currentValue) => accumulator + currentValue
   );
 };
-
 console.log(addedUp(numbersToAddUp));
+
+console.log("\n======== MAP() ========\n");
+const halved = numbersToAddUp.map((n) => n / 2);
+console.log(halved);
 
 // ===== SPREAD OPERATOR =====
 
@@ -528,15 +534,18 @@ console.log(fightClub2("Mark"));
 console.log("\n======== ANONYMOUS FUNCTION INSIDE A FUNCTION ========\n");
 const hello = () => {
   console.log("hello");
-  const goodbye = () => {
+  return () => {
     console.log("goodbye");
   };
-  goodbye();
 };
-hello();
+// INVOKE the hello function and call the returned function
+hello()();
+
 // Create a function expression with your first name as the variable and then print your first and last name
 console.log("\n======== NAME FUNCTION ========\n");
-const helloName = (firstName) => `${firstName} Soro`;
+const helloName = function (firstName) {
+  return `${firstName} Soro`;
+};
 console.log(helloName("Mark"));
 
 // Create an arrow function that accepts a number and have it return that number doubled
@@ -567,6 +576,10 @@ const { myName, age, location } = Human;
 console.log(myName);
 console.log(age);
 console.log(location);
+
+// RENAMING the Object property
+const { location: globalLocation } = Human;
+console.log(globalLocation);
 
 // ACCESS Granted
 const bulbasaur = {
