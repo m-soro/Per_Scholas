@@ -1,23 +1,16 @@
-# 01_11 Train Stops
+# 01_14 URLify
 
 ## What You'll Do
 
-Create a generator function called `getStop` which yields different stops on the trainline from Poughkeepsie to Grand Central Station.
+Create a function called urlify which takes in a blog title and outputs a url-friendly string where each word is lowercase and spaces are replaced with hyphens. Remember to remove all apostrophes.
 
-The stops are as follows:
-
-- Poughkeepsie
-- Newburgh
-- Peekskill
-- Yonkers
-- Bronx
-- Grand Central
-
-You will have a button with an id of `next-stop` that, when clicked, will console log the next stop or if the end of the line has been reached will console log "We made it!" and disable the button.
+```
+("How I Got Into Programming!!!") => "how-i-got-into-programming"
+```
 
 ## Requirements
 
-- Use a generator function
+- String manipulation
 
 ## Instructions
 

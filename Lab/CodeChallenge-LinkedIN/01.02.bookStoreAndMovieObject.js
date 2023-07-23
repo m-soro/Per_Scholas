@@ -35,9 +35,9 @@ const grapes = new Book("The Grapres of Wrath", "John Steinbeck", 123456, 1);
 const catcher = new Book("The Catcher in the Rye", "J.D. Salinger", 678912, 8);
 const farewell = new Book("A Farewell to Arms", "Ernest Hemingway", 56789, 12);
 
-// console.log(grapes.getInventory());
-// console.log(grapes.reStock("ggg"));
-// console.log(farewell.sell(6));
+console.log(grapes.getInventory());
+console.log(grapes.reStock("ggg"));
+console.log(farewell.sell(6));
 
 /**
  * -------------
@@ -71,5 +71,5 @@ const forrest = new Movie(
   8.8
 );
 
-// console.log(goodMen.getOverview());
-// console.log(forrest.getOverview());
+console.log(goodMen.getOverview());
+console.log(forrest.getOverview());
