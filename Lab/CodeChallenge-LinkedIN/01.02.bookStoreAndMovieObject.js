@@ -20,9 +20,8 @@ class Book {
     return this.currentInventory !== 0 ? this.currentInventory : "Out of Stock";
   }
   sell(sale = 1) {
-    return typeof sale === "number"
-      ? (this.currentInventory -= sale)
-      : "Enter a number";
+    //prettier-ignore
+    return typeof sale === "number" ? (this.currentInventory -= sale) : "Enter a number";
   }
   reStock(bookAmt = 5) {
     return typeof bookAmt === "number"
@@ -38,6 +37,33 @@ const farewell = new Book("A Farewell to Arms", "Ernest Hemingway", 56789, 12);
 console.log(grapes.getInventory());
 console.log(grapes.reStock("ggg"));
 console.log(farewell.sell(6));
+
+/**
+ * -------------------------
+ * RE-WRITTEN AS A FUNCTION
+ * -------------------------
+ */
+
+function Book(title, author, isbn, currentInventory) {
+  this.title = title;
+  this.author = author;
+  this.isbn = isbn;
+  this.currentInventory = currentInventory;
+}
+
+Book.prototype.getInventory = function () {
+  return this.currentInventory !== 0 ? this.currentInventory : "Out of Stock";
+};
+
+Book.prototype.sell = function (sale = 1) {
+  //prettier-ignore
+  return typeof sale === "number" ? (this.currentInventory -= sale) : "Enter a number";
+};
+
+Book.prototype.reStock = function (bookAmt = 5) {
+  //prettier-ignore
+  return typeof bookAmt === "number" ? (this.currentInventory += bookAmt) : "Enter a number";
+};
 
 /**
  * -------------

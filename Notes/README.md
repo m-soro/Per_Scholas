@@ -30,3 +30,13 @@ With the `!` I'm eliminating the `false` or `else` statement.
 [Alternative to if else](https://dev.to/b3ns44d/alternative-to-if-else-and-switch-object-literals-in-javascript-3nde)
 
 > Some cool ways to use objects as a look up table
+
+---
+
+Emmet Shortcut - Quickly generate markup
+ul#comments>li.comment{comment}\*3
+<ul id="comments">
+<li class="comment">comment</li>
+<li class="comment">comment</li>
+<li class="comment">comment</li>
+</ul>
