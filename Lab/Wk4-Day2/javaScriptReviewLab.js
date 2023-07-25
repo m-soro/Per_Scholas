@@ -81,16 +81,16 @@ age >= 16 ? console.log("Here are the keys") : console.log("Sorry you're too you
 
 console.log("\n======== II. LOOPS ========\n");
 
-for (let n = 0; n <= 10; n++) console.log(n);
-console.log("\n===========================\n");
-for (let n = 10; n <= 400; n++) console.log(n);
-console.log("\n===========================\n");
-for (let n = 12; n <= 4000; n += 3) console.log(n);
+// for (let n = 0; n <= 10; n++) console.log(n);
+// console.log("\n===========================\n");
+// for (let n = 10; n <= 400; n++) console.log(n);
+// console.log("\n===========================\n");
+// for (let n = 12; n <= 4000; n += 3) console.log(n);
 
-console.log("\n======== B. GET EVEN ========\n");
-for (let n = 0; n <= 100; n++) {
-  n % 2 === 0 ? console.log(`${n}<-- is an even number`) : console.log(n);
-}
+// console.log("\n======== B. GET EVEN ========\n");
+// for (let n = 0; n <= 100; n++) {
+//   n % 2 === 0 ? console.log(`${n}<-- is an even number`) : console.log(n);
+// }
 
 console.log("\n======== C. GIVE ME FIVE ========\n");
 for (let n = 1; n <= 100; n++) {
@@ -270,16 +270,27 @@ console.log(maxOfThree(6, 9, 1));
 console.log(maxOfThree(2, 2, 2));
 console.log(maxOfThree(10, 20, 100));
 
+// First Iteration
+//==================
+// const printLongestWord = (array) => {
+//   const ints = array.map((word) => word.length);
+//   const maxInArray = Math.max(...ints);
+//   let long = "";
+//   ints.forEach((word, index) => {
+//     if (word === maxInArray) {
+//       long = array[index];
+//     }
+//   });
+//   return long;
+// };
+
+// Second Iteration - Refactored
 const printLongestWord = (array) => {
-  const ints = array.map((word) => word.length);
-  const maxInArray = Math.max(...ints);
-  let long = "";
-  ints.forEach((word, index) => {
-    if (word === maxInArray) {
-      long = array[index];
-    }
+  let maxLetters = "string";
+  array.forEach((word) => {
+    word.length > maxLetters.length && (maxLetters = word);
   });
-  return long;
+  return maxLetters;
 };
 //prettier-ignore
 console.log(printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "Peanutbutter", "big", "Todd"]))
