@@ -81,16 +81,16 @@ age >= 16 ? console.log("Here are the keys") : console.log("Sorry you're too you
 
 console.log("\n======== II. LOOPS ========\n");
 
-// for (let n = 0; n <= 10; n++) console.log(n);
-// console.log("\n===========================\n");
-// for (let n = 10; n <= 400; n++) console.log(n);
-// console.log("\n===========================\n");
-// for (let n = 12; n <= 4000; n += 3) console.log(n);
+for (let n = 0; n <= 10; n++) console.log(n);
+console.log("\n===========================\n");
+for (let n = 10; n <= 400; n++) console.log(n);
+console.log("\n===========================\n");
+for (let n = 12; n <= 4000; n += 3) console.log(n);
 
-// console.log("\n======== B. GET EVEN ========\n");
-// for (let n = 0; n <= 100; n++) {
-//   n % 2 === 0 ? console.log(`${n}<-- is an even number`) : console.log(n);
-// }
+console.log("\n======== B. GET EVEN ========\n");
+for (let n = 0; n <= 100; n++) {
+  n % 2 === 0 ? console.log(`${n}<-- is an even number`) : console.log(n);
+}
 
 console.log("\n======== C. GIVE ME FIVE ========\n");
 for (let n = 1; n <= 100; n++) {
