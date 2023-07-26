@@ -79,22 +79,3 @@ function fibbonacci(n) {
 // console.log(fibbonacci(4));
 
 //============
-
-a = [1, 3, 3];
-b = [3, 2, 1];
-
-function compareTriplets(a, b) {
-  let al = 0;
-  let bb = 0;
-  let score = [];
-  for (let i = 0; i < a.length; i++) {
-    if (a[i] > b[i]) {
-      score[0] = al += 1;
-    } else if (a[i] < b[i]) {
-      score[1] = bb += 1;
-    }
-  }
-  return score;
-}
-
-console.log(compareTriplets(a, b));
