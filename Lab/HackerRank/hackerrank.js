@@ -150,13 +150,12 @@ function compareTriplets(a, b) {
  * TIME CONVERSION
  * ----------------
  * @link https://www.hackerrank.com/challenges/time-conversion/problem?h_r=next-challenge&h_v=zen&isFullScreen=false
- * 1/10 test cases failed :(
  */
 
 // let s = "07:05:45PM"; //19:05:45
 // let s = "12:01:00PM"; //12:01:00
 // let s = "12:01:00AM"; // 00:01:00
-let s = "12:00:00PM"; // 00:01:00
+let s = "12:00:00AM"; // 00:01:00
 
 function timeConversion(s) {
   // Write your code here
@@ -175,10 +174,9 @@ function timeConversion(s) {
     }
   }
   if (flag === "am") {
-    if (hour === 12 && mins === 0) {
-      time = `${hour - 12}:${mins}:${secs}`;
-    }
-    if (hour === 12 && mins >= 1) {
+    if (hour === 12 && mins === "00") {
+      time = `0${hour - 12}:${mins}:${secs}`;
+    } else if (hour === 12 && mins >= 1) {
       time = `00:${mins}:${secs}`;
     } else if (hour < 10) {
       time = `0${hour}:${mins}:${secs}`;
@@ -191,6 +189,40 @@ function timeConversion(s) {
 
 // console.log(timeConversion(s));
 
+/**
+ * -----------------
+ * GRADING STUDENTS
+ * -----------------
+ * @link https://www.hackerrank.com/challenges/grading/problem?isFullScreen=true
+ */
+
 function gradingStudents(grades) {
+  // Write your code here
+  let newGrades = [];
+  for (let grade of grades) {
+    if (grade % 5 === 0 || grade < 38) {
+      newGrades.push(grade);
+    } else if ((grade + 2) % 5 === 0) {
+      newGrades.push(grade + 2);
+    } else if ((grade + 1) % 5 === 0) newGrades.push(grade + 1);
+    else newGrades.push(grade);
+  }
+  return newGrades;
+}
+// console.log(gradingStudents([73, 67, 38, 10, 90, 5]));
+
+/*
+ * Complete the 'countApplesAndOranges' function below.
+ *
+ * The function accepts following parameters:
+ *  1. INTEGER s
+ *  2. INTEGER t
+ *  3. INTEGER a
+ *  4. INTEGER b
+ *  5. INTEGER_ARRAY apples
+ *  6. INTEGER_ARRAY oranges
+ */
+
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
   // Write your code here
 }
