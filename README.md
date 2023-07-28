@@ -12,6 +12,7 @@ This will contain my course work for Software Engineering track.
   - Contains code challenges from different websites such CSX, CodeAcademy, some LinkedIn Learning.
   - [CSX](Lab/CodeChallenge-CSX/)
   - [LinkedIn Learning](Lab/CodeChallenge-LinkedIN/)
+  - [HackerRank](Lab/HackerRank/)
 - [Projects](Projects/)
 - [Resources](Resources/)
   - Miscellaneous files. Resources.

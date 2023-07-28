@@ -766,4 +766,52 @@ const myFunc = function () {
 const myJob = (name, profession) =>
   `Hi, my name is ${name} and I'm a ${profession}.`;
 
-console.log(myJob("Jon", "Knights Watchman"));
+// console.log(myJob("Jon", "Knights Watchman"));
+
+/**
+ * -----------
+ * MAKEPLURAL
+ * -----------
+ * Create a function makePlural that accepts an array argument.
+ * makePlural will iterate through the array, add an 's' to the end of each array element,
+ * and return the mutated array.
+ */
+
+function makePlural(arr) {
+  // ADD CODE HERE
+  let plurals = arr.map((word) => word + "s");
+  return plurals;
+}
+
+const arr1 = ["lion", "tiger", "bear"];
+const arr2 = ["computer", "video game", "system"];
+
+// Uncomment these to check your work!
+// console.log(makePlural(arr1)); // should log: ['lions', 'tigers', 'bears']
+// console.log(makePlural(arr2)); // should log: ['computers', 'video games', 'systems']
+
+/**
+ * -----------------
+ * ADDING ARGUMENTS
+ * -----------------
+ * Examine the code given to you. Determine what arguments must be passed into isX and isY respectively
+ * to obtain an output of true for both, and pass in the arguments accordingly.
+ */
+
+const xx = 23;
+
+function isX(num) {
+  const xx = 44;
+  return num === xx;
+}
+
+function isY(num) {
+  return num === xx;
+}
+
+const o = isX(44);
+const t = isY(23);
+
+// Uncomment these to check your work!
+console.log(o); // should log: true
+console.log(t); // should log: true
