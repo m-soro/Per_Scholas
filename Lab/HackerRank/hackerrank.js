@@ -72,14 +72,16 @@ function plusMinus(arr) {
 // plusMinus(sampleNums);
 
 /**
- * ------------
+ * --------------------
+ * HACKERRANK WK4 DAY4
+ * --------------------
  * MIN MAX SUM
  * ------------
  * @link https://www.hackerrank.com/challenges/mini-max-sum/problem?isFullScreen=true
- * 1/15 test cases failed :(
  */
 
-let nums = [1, 2, 3, 4, 5];
+let nums = [5, 5, 5, 5, 5];
+// let nums = [1, 2, 3, 4, 5];
 function miniMaxSum(arr) {
   // Write your code here
   let maxNum = Math.max(...arr);
@@ -87,16 +89,12 @@ function miniMaxSum(arr) {
   let maxSum = 0;
   let minSum = 0;
   arr.forEach((num) => {
-    if (num !== minNum) {
-      maxSum += num;
-    }
-    if (num !== maxNum) {
-      minSum += num;
-    }
+    if (num !== minNum) maxSum += num;
+    if (num !== maxNum) minSum += num;
+    if (minNum === maxNum) minSum = maxSum = arr[0] * 4;
   });
   console.log(`${minSum} ${maxSum}`);
 }
-
 // miniMaxSum(nums);
 
 /**
