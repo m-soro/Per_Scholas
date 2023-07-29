@@ -198,7 +198,7 @@ function gradingStudents(grades) {
   // Write your code here
   let newGrades = [];
   for (let grade of grades) {
-    if (grade % 5 === 0 || grade < 38) {
+    if (grade < 38) {
       newGrades.push(grade);
     } else if ((grade + 2) % 5 === 0) {
       newGrades.push(grade + 2);
