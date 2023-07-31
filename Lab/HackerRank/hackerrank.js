@@ -114,6 +114,14 @@ function birthdayCakeCandles(candles) {
   });
   return tallestCount;
 }
+
+// OR
+
+// function birthdayCakeCandles(candles) {
+//   let filtered = candles.filter((num) => num === Math.max(...candles));
+//   return filtered.length;
+// }
+
 // console.log(birthdayCakeCandles(candles));
 
 /**
@@ -209,18 +217,45 @@ function gradingStudents(grades) {
 }
 // console.log(gradingStudents([73, 67, 38, 10, 90, 5]));
 
-/*
- * Complete the 'countApplesAndOranges' function below.
- *
- * The function accepts following parameters:
- *  1. INTEGER s
- *  2. INTEGER t
- *  3. INTEGER a
- *  4. INTEGER b
- *  5. INTEGER_ARRAY apples
- *  6. INTEGER_ARRAY oranges
+/**
+ * -----------------
+ * APPLESANDORANGES
+ * -----------------
+ * @link https://www.hackerrank.com/challenges/apple-and-orange/problem?isFullScreen=true
  */
-
 function countApplesAndOranges(s, t, a, b, apples, oranges) {
   // Write your code here
+
+  let appleLands = apples.map((apple) => apple + a);
+  let orangeLands = oranges.map((orange) => orange + b);
+
+  let appleLanded = appleLands.filter((apple) => apple <= t && apple >= s);
+  let orangeLanded = orangeLands.filter((orange) => orange <= t && orange >= s);
+
+  // console.log(appleLanded.length);
+  // console.log(appleLanded.length);
 }
+
+/**
+ * ------------------
+ * NUMBER LINE JUMPS
+ * ------------------
+ * @link https://www.hackerrank.com/challenges/between-two-sets/problem?isFullScreen=true
+ * 1/30 cases failed
+ */
+
+function kangaroo(x1, v1, x2, v2) {
+  // Write your code here
+  let result = "NO";
+  let position1 = x1 + v1;
+  let position2 = x2 + v2;
+  for (let i = 1; i < 100000000; i++) {
+    if ((position1 += v1) === (position2 += v2)) {
+      result = "YES";
+      break;
+    }
+  }
+  return result;
+}
+console.log(kangaroo(0, 3, 4, 2)); //
+console.log(kangaroo(0, 2, 5, 3)); //
