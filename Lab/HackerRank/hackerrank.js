@@ -1,20 +1,27 @@
-// // my solution
-// function staircase(n) {
-//   let gap = n;
-//   for (let i = 1; i <= n; i++) {
-//     console.log(" ".repeat(gap - i) + "#".repeat(i)); // corrected
-//     // console.log(" ".repeat((gap -= 1)), "#".repeat(i)); // Where i made a mistake
-//   }
-// }
+/**
+ * CODE CHALLENGE
+ * ----------
+ * STAIRCASE
+ * ----------
+ * @link https://www.hackerrank.com/challenges/staircase/problem?isFullScreen=true
+ * Almost got it! - tiny mistake was made
+ */
+// MY SOLUTION
+function staircase(n) {
+  let gap = n;
+  for (let i = 1; i <= n; i++) {
+    console.log(" ".repeat(gap - i) + "#".repeat(i)); // corrected
+    // console.log(" ".repeat((gap -= 1)), "#".repeat(i)); // Where i made a mistake
+  }
+}
 // staircase(6);
 
-// // google
-// function stairs(n) {
-//   for (let i = 1; i <= n; i++) {
-//     console.log(" ".repeat(n - i) + "#".repeat(i));
-//   }
-// }
-
+// FROM GOOGLE
+function stairs(n) {
+  for (let i = 1; i <= n; i++) {
+    console.log(" ".repeat(n - i) + "#".repeat(i));
+  }
+}
 // stairs(6);
 
 /**
@@ -98,6 +105,7 @@ function miniMaxSum(arr) {
 // miniMaxSum(nums);
 
 /**
+ * CODE CHALLENGE
  * -----------------
  * BIRTHDAY CANDLES
  * -----------------
@@ -115,7 +123,7 @@ function birthdayCakeCandles(candles) {
   return tallestCount;
 }
 
-// OR
+// OR MUCH CONCISELY
 
 // function birthdayCakeCandles(candles) {
 //   let filtered = candles.filter((num) => num === Math.max(...candles));
@@ -148,9 +156,6 @@ function compareTriplets(a, b) {
 }
 // console.log(compareTriplets(a, b));
 
-// 12 13 14 15
-// 0   1  2  3
-
 /**
  * ----------------
  * TIME CONVERSION
@@ -161,7 +166,7 @@ function compareTriplets(a, b) {
 // let s = "07:05:45PM"; //19:05:45
 // let s = "12:01:00PM"; //12:01:00
 // let s = "12:01:00AM"; // 00:01:00
-let s = "12:00:00AM"; // 00:01:00
+// let s = "12:00:00AM"; // 00:01:00
 
 function timeConversion(s) {
   // Write your code here
@@ -192,7 +197,6 @@ function timeConversion(s) {
   }
   return time;
 }
-
 // console.log(timeConversion(s));
 
 /**
@@ -223,8 +227,6 @@ function gradingStudents(grades) {
  * @link https://www.hackerrank.com/challenges/apple-and-orange/problem?isFullScreen=true
  */
 function countApplesAndOranges(s, t, a, b, apples, oranges) {
-  // Write your code here
-
   let appleLands = apples.map((apple) => apple + a);
   let orangeLands = oranges.map((orange) => orange + b);
 
@@ -244,7 +246,6 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
  */
 
 function kangaroo(x1, v1, x2, v2) {
-  // Write your code here
   let result = "NO";
   let position1 = x1 + v1;
   let position2 = x2 + v2;
@@ -260,16 +261,14 @@ function kangaroo(x1, v1, x2, v2) {
 // console.log(kangaroo(0, 2, 5, 3)); //
 
 /**
- * Wk5-Day3 Challenge
+ * WEEK 5 DAY 3 CODE CHALLENGE
  * ----------------
  * MIGRATORY BIRDS
  * ----------------
  * @link https://www.hackerrank.com/challenges/migratory-birds/problem?isFullScreen=true
  */
-
 let arr = [1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4];
 function migratoryBirds(arr) {
-  // Write your code here
   let obj = {};
   //prettier-ignore
   arr.forEach((element) => (obj[element] = obj[element] ? obj[element] + 1 : 1));
@@ -283,9 +282,51 @@ function migratoryBirds(arr) {
 }
 // migratoryBirds(arr);
 
-// ANOTHER WAY TO WRTIE THE OBJECT CREATION PART - MIGRATORY BIRDS
+/**
+ * ----------------------------------------------------------------
+ * ANOTHER WAY TO WRTIE THE OBJECT CREATION PART - MIGRATORY BIRDS
+ * ----------------------------------------------------------------
+ */
 let obj = {};
 for (let key of arr) {
   obj[key] = obj[key];
   obj[key] === undefined ? (obj[key] = 1) : (obj[key] += 1);
+}
+
+/**
+ * ---------------------------
+ * RE-WRITTEN USING .FILTER()
+ * ---------------------------
+ */
+function migratoryBirds(arr) {
+  let frequency = {};
+  arr.forEach((n) => {
+    frequency[n] = frequency[n];
+    if (frequency[n] in frequency) {
+      frequency[n] += 1;
+    } else {
+      frequency[n] = 1;
+    }
+  });
+  let max = 0;
+  for (let n in frequency) {
+    if (max <= frequency[n]) max = frequency[n];
+  }
+
+  let filtered = Object.keys(frequency).filter((key) => frequency[key] === max);
+  return Math.min(...filtered);
+}
+
+/**
+ * -----------------------------------------------------------------
+ * OR USING A MAP OBJECT TO CREATE A FREQUENCY TABLE - NO .FILTER()
+ * -----------------------------------------------------------------
+ */
+function migratoryBirds(arr) {
+  let frequencyMap = new Map();
+  arr.forEach((val) => frequencyMap.set(val, (frequencyMap.get(val) || 0) + 1));
+  let max = Math.max(...frequencyMap.values());
+  let result = [];
+  frequencyMap.forEach((val, key) => val === max && result.push(key));
+  return Math.min(...result);
 }
