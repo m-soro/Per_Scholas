@@ -1,0 +1,32 @@
+/***===== RESET STYLING =====***/
+* {
+  /* height & width now includes border & padding */
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Helvetica;
+}
+/***===== RESET STYLING =====***/
+
+nav {
+  display: flex; /*lays everything inside side by side*/
+  height: 300px;
+  background-color: #a2cbb6;
+  flex-direction: column; /*changes the direction of MAIN and CROSS AXIS*/
+  /* @link https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content */
+  justify-content: center; /* controls alignment for MAIN axis */
+  align-items: center; /* controls alignment for CROSS axis */
+}
+
+.list-item {
+  font-size: 20px;
+  margin: 10px;
+  color: #f3dba8;
+}
+
+/* lets put the log out all the way to the right*/
+/* nav > div:last-child {
+  margin-left: auto;
+} */

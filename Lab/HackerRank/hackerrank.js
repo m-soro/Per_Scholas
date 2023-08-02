@@ -201,7 +201,6 @@ function timeConversion(s) {
  * -----------------
  * @link https://www.hackerrank.com/challenges/grading/problem?isFullScreen=true
  */
-
 function gradingStudents(grades) {
   // Write your code here
   let newGrades = [];
@@ -257,5 +256,36 @@ function kangaroo(x1, v1, x2, v2) {
   }
   return result;
 }
-console.log(kangaroo(0, 3, 4, 2)); //
-console.log(kangaroo(0, 2, 5, 3)); //
+// console.log(kangaroo(0, 3, 4, 2)); //
+// console.log(kangaroo(0, 2, 5, 3)); //
+
+/**
+ * Wk5-Day3 Challenge
+ * ----------------
+ * MIGRATORY BIRDS
+ * ----------------
+ * @link https://www.hackerrank.com/challenges/migratory-birds/problem?isFullScreen=true
+ */
+
+let arr = [1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4];
+function migratoryBirds(arr) {
+  // Write your code here
+  let obj = {};
+  //prettier-ignore
+  arr.forEach((element) => (obj[element] = obj[element] ? obj[element] + 1 : 1));
+  let max = 0;
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      if (max <= obj[key]) max = obj[key];
+    }
+  }
+  return Object.keys(obj).find((key) => obj[key] === max);
+}
+// migratoryBirds(arr);
+
+// ANOTHER WAY TO WRTIE THE OBJECT CREATION PART - MIGRATORY BIRDS
+let obj = {};
+for (let key of arr) {
+  obj[key] = obj[key];
+  obj[key] === undefined ? (obj[key] = 1) : (obj[key] += 1);
+}

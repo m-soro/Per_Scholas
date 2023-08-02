@@ -1,0 +1,84 @@
+/***===== RESET STYLING =====***/
+* {
+  /* height & width now includes border & padding */
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Helvetica;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 50px 1fr 30px;
+  grid-gap: 5px;
+  /* grid-template-areas:
+    " nav nav "
+    " aside main "
+    " footer footer"; */
+}
+
+/***===== ASSIGNING NAMES TO GRID AREA =====***/
+/*prettier-ignore*/
+/* nav {grid-area: nav;} */
+/*prettier-ignore*/
+/* aside {grid-area: aside;} */
+/*prettier-ignore*/
+/* main {grid-area: main;} */
+/*prettier-ignore*/
+/* footer {grid-area: footer;} */
+/***===== ASSIGNING NAMES TO GRID AREA =====***/
+
+/***===== GRID TEMPLATE AREA AND BELOW DOES THE SAME THING =====***/
+
+nav,
+footer {
+  /***===== ALL THESE THREE DO THE SAME THING =====***/
+  /* Then end is actually 3rd column - even though it only has two columns*/
+  /* grid-column-start: 1;
+  grid-column-end: 3; */
+  /***===== DOES THE SAME THING =====***/
+  /* grid-column: 1 / 3; START AND END*/
+  /***===== DOES THE SAME THING =====***/
+  grid-column: span 2; /*TELLS NAV AND FOOTER TO SPAN 2 COLUMNS */
+}
+
+nav {
+  display: flex; /*lays everything inside side by side*/
+  height: 50px;
+  background-color: #a2cbb6;
+  flex-direction: row; /*changes the direction of MAIN and CROSS AXIS*/
+  /* @link https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content */
+  justify-content: center; /* controls alignment for MAIN axis */
+  align-items: center; /* controls alignment for CROSS axis */
+}
+
+.list-item {
+  font-size: 20px;
+  margin: 10px;
+  color: #f3dba8;
+}
+
+/*lets put the log out all the way to the right*/
+nav > div:last-child {
+  margin-left: auto;
+}
+
+aside {
+  background-color: #a2b4da;
+}
+
+main {
+  background-color: #f3dba8;
+}
+
+footer {
+  background-color: #a2cbb6;
+}
+
+/* this will make everything that has this class centered*/
+.flex-ctr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
