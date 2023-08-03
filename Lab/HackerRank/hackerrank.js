@@ -330,3 +330,50 @@ function migratoryBirds(arr) {
   frequencyMap.forEach((val, key) => val === max && result.push(key));
   return Math.min(...result);
 }
+
+/**
+ * ---------------------
+ * BREAKING THE RECORDS
+ * ---------------------
+ * @link https://www.hackerrank.com/challenges/breaking-best-and-worst-records/problem?isFullScreen=false
+ */
+let scores = [10, 5, 20, 20, 4, 5, 2, 25, 1];
+function breakingRecords(scores) {
+  let highest = [scores[0]];
+  let lowest = [scores[0]];
+  scores.forEach((v, i) => {
+    if (i !== 0) {
+      //prettier-ignore
+      highest.push(v >= highest[highest.length-1] ? v : highest[highest.length-1]);
+      //prettier-ignore
+      lowest.push(v <= lowest[lowest.length-1] ? v : lowest[lowest.length-1]);
+    }
+  });
+  let highestCounter = 0;
+  let lowestCounter = 0;
+  highest.forEach((v, i) => v > highest[i - 1] && highestCounter++);
+  lowest.forEach((v, i) => v < lowest[i - 1] && lowestCounter++);
+  return [highestCounter, lowestCounter];
+}
+console.log(breakingRecords(scores));
+
+/**
+ * ------------------
+ * SUBARRAY DIVISION
+ * ------------------
+ * @link https://www.hackerrank.com/challenges/the-birthday-bar/problem?isFullScreen=true
+ */
+
+function birthday(s, d, m) {
+  let arr = s;
+  let sum = d;
+  let len = m;
+  let count = 0;
+  let newArr = [];
+  arr.forEach((v, i) => newArr.push(arr.slice(i, i + len)));
+  newArr.forEach(
+    (segment) => segment.reduce((a, e) => a + e) === sum && count++
+  );
+  return count;
+}
+// console.log(birthday([1, 1, 1, 3, 2], 3, 3));

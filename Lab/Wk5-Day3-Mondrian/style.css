@@ -1,0 +1,39 @@
+/* 
+red #DE271A
+blue #015BA0
+white #E5E3E7
+yellow #F4DB70
+black #120E0F
+*/
+/***===== RESET STYLING =====***/
+* {
+  /* height & width now includes border & padding */
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Helvetica;
+}
+
+.grid-container {
+  display: grid;
+  background-color: #120e0f;
+  width: 800px;
+  height: 750px;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.row1 {
+  background-color: #e5e3e7;
+}
+
+.row2 {
+  background-color: #de271a;
+  grid-area: reverse;
+}
+
+.row3 {
+  background-color: #015ba0;
+}
