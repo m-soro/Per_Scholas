@@ -377,3 +377,27 @@ function birthday(s, d, m) {
   return count;
 }
 // console.log(birthday([1, 1, 1, 3, 2], 3, 3));
+
+/**
+ * WK5 DAY4 CODE CHALLENGE
+ * -----------------
+ * CATS AND A MOUSE
+ * -----------------
+ * @link https://www.hackerrank.com/challenges/cats-and-a-mouse/problem?isFullScreen=true
+ */
+
+function catAndMouse(x, y, z) {
+  let catA = x;
+  let catB = y;
+  let mouseC = z;
+  let catAPos = 0;
+  let catBPos = 0;
+  catAPos = Math.abs(catA - mouseC);
+  catBPos = Math.abs(catB - mouseC);
+  if (catAPos < catBPos) {
+    console.log("Cat A");
+  } else if (catAPos > catBPos) {
+    console.log("Cat B");
+  } else catAPos === catBPos;
+  console.log("Mouse C");
+}
