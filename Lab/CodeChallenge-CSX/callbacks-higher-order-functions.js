@@ -169,7 +169,6 @@ const add = function (a, b) {
  * @link https://csx.codesmith.io/units/callbacks/challenge-intersection
  * It works, but so different from csx solution
  */
-
 // ADD CODE HERE
 function intersection([a1, a2, a3]) {
   let newSet = new Set([...a1, ...a2, ...a3]); // combine 3 arrays in one array, then convert to Set
@@ -183,7 +182,123 @@ function intersection([a1, a2, a3]) {
 }
 
 // Uncomment these to check your work!
-const arr1 = [5, 10, 15, 20];
-const arr2 = [15, 88, 1, 5, 7];
-const arr3 = [1, 10, 15, 5, 20];
-console.log(intersection([arr1, arr2, arr3])); // should log: [5, 15]
+// const arr1 = [5, 5, 5, 20];
+// const arr2 = [15, 88, 1, 5, 7];
+// const arr3 = [1, 10, 15, 5, 20];
+// console.log(intersection([arr1, arr2, arr3])); // should log: [5, 15]
+
+/**
+ * ------
+ * UNION
+ * ------
+ * @link https://csx.codesmith.io/units/callbacks/challenge-union
+ */
+
+// function union(arrays) {
+//   let newArray = [];
+//   arrays.forEach((arr) => {
+//     arr.forEach((a) => {
+//       if (!newArray.includes(a)) newArray.push(a);
+//     });
+//   });
+//   return newArray;
+// }
+
+/**
+ * ------
+ * UNION
+ * ------
+ * CSX's solution using reduce method
+ */
+
+function union(arrays) {
+  return arrays.reduce((outputArray, currentArray) => {
+    currentArray.forEach((element) => {
+      if (!outputArray.includes(element)) outputArray.push(element);
+    });
+    return outputArray;
+  });
+}
+
+// Uncomment these to check your work!
+// const arr1 = [5, 10, 15];
+// const arr2 = [15, 88, 1, 5, 7];
+// const arr3 = [100, 15, 10, 1, 5];
+// console.log(union([arr1, arr2, arr3])); // should log: [5, 10, 15, 88, 1, 7, 100]
+
+/**
+ * -------------
+ * OBJOFMATCHES
+ * -------------
+ * @link https://csx.codesmith.io/units/callbacks/challenge-obj-of-matches
+ * When creating an object dynamically use bracket notation instead of . dot notation
+ */
+
+function objOfMatches(a1, a2, callback) {
+  let matchObject = {};
+  for (let i = 0; i < a1.length; i++) {
+    if (callback(a1[i]) === a2[i]) {
+      matchObject[a1[i]] = a2[i];
+    }
+  }
+  return matchObject;
+}
+
+/**
+ * ---------------------------------
+ * A FOREACH LOOP WILL WORK AS WELL
+ * ---------------------------------
+ *
+ */
+
+// arr1.forEach((value, index) => {
+//   console.log(value, index, arr2[index]);
+// });
+
+// Uncomment these to check your work!
+// const arr1 = ["hi", "howdy", "bye", "later", "hello"];
+// const arr2 = ["HI", "Howdy", "BYE", "later", "HELLO"];
+// function uppercaser(str) {
+//   return str.toUpperCase();
+// }
+// console.log(objOfMatches(arr1, arr2, uppercaser)); // should log: { hi: 'HI', bye: 'BYE', hello: 'HELLO' }
+
+/**
+ * ---------
+ * ARRTOOBJ
+ * ---------
+ * @link https://csx.codesmith.io/units/callbacks/challenge-array-to-obj
+ * For some reason its failing to execute in VS Code. Works in CSX website though
+ */
+
+// function arrToObj(array, callback) {
+//   let newObject = {};
+//   array.forEach((element) => {
+//     newObject[element] = callback(element);
+//   });
+//   return newObject;
+// }
+
+// Uncomment these to check your work!
+// const arrOfStrings = ["beer", "glue"];
+// console.log(arrToObj(arrOfStrings));
+// const capitalize = (str) => str.toUpperCase();
+// console.log(arrToObj(arrOfStrings, capitalize)); // should log: { beer: 'BEER', glue: 'GLUE' }
+
+/**
+ * -----------
+ * JOINANDMAP
+ * -----------
+ * @link https://csx.codesmith.io/units/callbacks/challenge-join-and-map
+ */
+function joinAndMap(a1, a2, cb) {
+  let newArr = [];
+  a1.concat(a2).forEach((a) => newArr.push(cb(a)));
+  return newArr;
+}
+
+// Uncomment these to check your work!
+// const arrRed = ["strawberry", "cherry", "wine"];
+// const arrBlue = ["blueberry", "sky", "ocean"];
+// const cap = (str) => str.toUpperCase();
+// console.log(joinAndMap(arrRed, arrBlue, cap)); // should log: ['STRAWBERRY', 'CHERRY', 'WINE', 'BLUEBERRY', 'SKY', 'OCEAN']

@@ -17,5 +17,5 @@
 
 ## [Save the universe version 3](https://save-the-universe-wk5-mini-project-version3.msoro.repl.co/)
 
-- Added a Show/Hide Stats feature and fixed a mug. More info in the readme doc.
+- Added a Show/Hide Stats feature and fixed a bug. More info in the readme doc.
 - [GitHub Repo](https://github.com/m-soro/Save_The_Universe_Version_3)
