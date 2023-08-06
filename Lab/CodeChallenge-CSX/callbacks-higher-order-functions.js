@@ -1,4 +1,14 @@
 /**
+ * CHALLENGES COMPLETED
+ * -------------------
+ * ADDITIONAL READING
+ * -------------------
+ * @link https://developer.mozilla.org/en-US/docs/Glossary/Callback_function
+ * @link https://eloquentjavascript.net/05_higher_order.html
+ * @link https://www.youtube.com/watch?v=rRgD1yVwIvE
+ */
+
+/**
  * ----------
  * PLURALIZE
  * ----------
@@ -302,3 +312,163 @@ function joinAndMap(a1, a2, cb) {
 // const arrBlue = ["blueberry", "sky", "ocean"];
 // const cap = (str) => str.toUpperCase();
 // console.log(joinAndMap(arrRed, arrBlue, cap)); // should log: ['STRAWBERRY', 'CHERRY', 'WINE', 'BLUEBERRY', 'SKY', 'OCEAN']
+
+/**
+ * --------------------
+ * CHALLENGE: MULTIMAP
+ * --------------------
+ * @link https://csx.codesmith.io/units/callbacks/challenge-multi-map
+ */
+
+function multiMap(items, cb) {
+  let myObj = {};
+  for (let i = 0; i < items.length; i++) {
+    myObj[items[i]] = cb.map((c) => c(items[i]));
+  }
+  return myObj;
+}
+
+// Uncomment these to check your work!
+function uppercaser(str) {
+  return str.toUpperCase();
+}
+function capitalize(str) {
+  return str[0].toUpperCase() + str.slice(1).toLowerCase();
+}
+function repeater(str) {
+  return str + str;
+}
+const items = ["catfood", "glue", "beer"];
+const functions = [uppercaser, capitalize, repeater];
+// console.log(multiMap(items, functions)); // should log: { catfood: ['CATFOOD', 'Catfood', 'catfoodcatfood'], glue: ['GLUE', 'Glue', 'glueglue'], beer: ['BEER', 'Beer', 'beerbeer'] }
+
+/**
+ * --------------------
+ * CHALLENGE: MAJORITY
+ * --------------------
+ * @link https://csx.codesmith.io/units/callbacks/challenge-majority
+ */
+
+function majority(array, cb) {
+  let trues = array.filter((a) => cb(a));
+  return trues.length > array.length / 2 ? true : false;
+}
+
+// Uncomment these to check your work!
+const isOdd = function (num) {
+  return num % 2 === 1;
+};
+// console.log(majority([1, 2, 3, 4, 5], isOdd)); // should log: true
+// console.log(majority([2, 3, 4, 5], isOdd)); // should log: false
+
+// function prioritize(array, callback) {
+//   let newArray = [];
+//   array.forEach((element) => {
+//     //prettier-ignore
+//     callback(element) ? newArray.unshift(element) : newArray.push(element);
+//   });
+//   return newArray;
+// }
+
+/**
+ * ----------------------
+ * CHALLENGE: PRIORITIZE
+ * ----------------------
+ * @link https://csx.codesmith.io/units/callbacks/challenge-prioritize
+ */
+
+function prioritize(array, callback) {
+  let trueArray = [];
+  let falseArray = [];
+  array.forEach((element) => {
+    callback(element) ? trueArray.push(element) : falseArray.push(element);
+  });
+  let result = trueArray.sort().concat(falseArray);
+  return result;
+}
+
+// Uncomment these to check your work!
+function startsWithS(str) {
+  return str[0].toLowerCase() === "s";
+}
+const tvShows = ["curb", "rickandmorty", "seinfeld", "sunny", "friends"];
+// console.log(prioritize(tvShows, startsWithS)); // should log: ['seinfeld', 'sunny', 'curb', 'rickandmorty', 'friends']
+
+/**
+ * -------------------
+ * CHALLENGE: COUNTBY
+ * -------------------
+ * @link https://csx.codesmith.io/units/callbacks/challenge-count-by
+ */
+
+function countBy(array, callback) {
+  let myObj = {};
+  let odd = [];
+  let even = [];
+  array.forEach((a) => {
+    callback(a) === "odd" ? odd.push("odd") : even.push("even");
+  });
+  myObj.odd = odd.length;
+  myObj.even = even.length;
+  return myObj;
+}
+
+// Uncomment these to check your work!
+function evenOdd(n) {
+  if (n % 2 === 0) return "even";
+  else return "odd";
+}
+const numz = [1, 2, 3, 4, 5];
+// console.log(countBy(numz, evenOdd)); // should log: { odd: 3, even: 2 }
+
+/**
+ * -------------------
+ * CHALLENGE: GROUPBY
+ * -------------------
+ * @link https://csx.codesmith.io/units/callbacks/challenge-group-by
+ */
+
+function groupBy(array, callback) {
+  let myObj = {};
+  array.forEach((element) => {
+    //prettier-ignore
+    myObj[callback(element)] = array.filter((a) => callback(a) === callback(element) && a);
+  });
+  return myObj;
+}
+
+// Uncomment these to check your work!
+const decimals = [1.3, 2.1, 2.4];
+const floored = function (num) {
+  return Math.floor(num);
+};
+// console.log(groupBy(decimals, floored)); // should log: { 1: [1.3], 2: [2.1, 2.4] }
+
+/**
+ * --------------------
+ * CHALLENGE: GOODKEYS
+ * --------------------
+ * @link https://csx.codesmith.io/units/callbacks/challenge-good-keys
+ */
+
+function goodKeys(obj, callback) {
+  let newArr = [];
+  for (let value in obj) {
+    if (callback(obj[value]) === true) newArr.push(value);
+  }
+  return newArr;
+}
+
+// Uncomment these to check your work!
+const sunny = {
+  mac: "priest",
+  dennis: "calculator",
+  charlie: "birdlaw",
+  dee: "bird",
+  frank: "warthog",
+};
+function startsWithBird(str) {
+  return str.slice(0, 4).toLowerCase() === "bird";
+}
+
+console.log(goodKeys(sunny, startsWithBird)); // should log: ['charlie', 'dee']
