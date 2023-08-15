@@ -3,22 +3,25 @@
 //////////  HACKERRANK SCRATCH PAD   //////////
 /////////   ----------------------  //////////
 /////////////////////////////////////////////
-// Complete the catAndMouse function below.
 
-function catAndMouse(x, y, z) {
-  let catA = x;
-  let catB = y;
-  let mouseC = z;
-  let catAPos = 0;
-  let catBPos = 0;
-  catAPos = Math.abs(catA - mouseC);
-  catBPos = Math.abs(catB - mouseC);
-  if (catAPos < catBPos) {
-    console.log("Cat A");
-  } else if (catAPos > catBPos) {
-    console.log("Cat B");
-  } else catAPos === catBPos;
-  console.log("Mouse C");
+function divisibleSumPairs(n, k, ar) {
+  // Write your code here
+  let lengthOfArray = n;
+  let divisor = k;
+  let array = ar;
+  let newArr = [];
+
+  array.forEach((value, index) => {
+    array.filter((va) => {
+      if ((value + va) % divisor === 0) {
+        if (value < va) {
+          console.log("VALUE:", value, "VA:", va);
+          newArr.push([value, va]);
+        }
+      }
+    });
+  });
+  return newArr.length;
 }
-console.log(catAndMouse(1, 2, 3));
-console.log(catAndMouse(1, 3, 2));
+
+console.log(divisibleSumPairs(6, 3, [1, 3, 2, 6, 1, 2]));
