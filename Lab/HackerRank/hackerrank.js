@@ -401,3 +401,53 @@ function catAndMouse(x, y, z) {
   } else catAPos === catBPos;
   console.log("Mouse C");
 }
+
+function divisibleSumPairs(n, k, ar) {
+  // Write your code here
+  let lengthOfArray = n;
+  let divisor = k;
+  let array = ar;
+  let newArr = [];
+
+  array.forEach((value, index) => {
+    array.filter((va) => {
+      if ((value + va) % divisor === 0) {
+        if (value < va) {
+          console.log("VALUE:", value, "VA:", va);
+          newArr.push([value, va]);
+        }
+      }
+    });
+  });
+  return newArr.length;
+}
+
+// console.log(divisibleSumPairs(6, 3, [1, 3, 2, 6, 1, 2]));
+
+/**
+ * ----------------------
+ * DAY OF THE PROGRAMMER
+ * ----------------------
+ * @link https://www.hackerrank.com/challenges/day-of-the-programmer/problem?isFullScreen=true
+ * 7/61
+ */
+
+function dayOfProgrammer(yr) {
+  let isLeapYear = false;
+  let firstEight = 243;
+  let targetDay = 256;
+  let result = 0;
+
+  if (yr) {
+    if (yr % 4 === 0) {
+      isLeapYear = true;
+    } else if (yr % 400 === 0 || (yr % 4 === 0 && !yr % 100 === 0)) {
+      isLeapYear = true;
+    }
+    if (isLeapYear) firstEight += 1;
+    result = targetDay - firstEight;
+  }
+  return `${result}.09.${yr}`;
+}
+let yr = 2016;
+// console.log(dayOfProgrammer(yr))
