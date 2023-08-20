@@ -451,3 +451,25 @@ function dayOfProgrammer(yr) {
 }
 let yr = 2016;
 // console.log(dayOfProgrammer(yr))
+
+// https://www.hackerrank.com/challenges/sock-merchant/problem?isFullScreen=true
+
+function sockMerchant(n, ar) {
+  // Write your code here
+  let sockTable = {};
+  let match = 0;
+  for (let key of ar) {
+    sockTable[key] = sockTable[key];
+    sockTable[key] === undefined ? (sockTable[key] = 1) : (sockTable[key] += 1);
+  }
+  for (let prop in sockTable) {
+    if (sockTable[prop] % 2 === 0) {
+      match += sockTable[prop] / 2;
+    } else if (sockTable[prop] > 2 && sockTable[prop] % 2 !== 0) {
+      match += Math.floor(sockTable[prop] / 2);
+    }
+  }
+  return match;
+}
+
+// console.log(sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20]));

@@ -35,8 +35,16 @@ With the `!` I'm eliminating the `false` or `else` statement.
 
 Emmet Shortcut - Quickly generate markup
 ul#comments>li.comment{comment}\*3
+
 <ul id="comments">
 <li class="comment">comment</li>
 <li class="comment">comment</li>
 <li class="comment">comment</li>
 </ul>
+
+---
+
+## Command Shortcut for React
+
+mkdir FOLDERNAME ; cd FOLDERNAME ; npm create vite@latest . ; npm install ; npm run dev
+`ctrl + c` stop the server

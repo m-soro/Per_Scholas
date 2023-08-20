@@ -3,38 +3,59 @@
 //////////  HACKERRANK SCRATCH PAD   //////////
 /////////   ----------------------  //////////
 /////////////////////////////////////////////
-function dayOfProgrammer(yr) {
-  let isLeapYear = false;
-  let firstEight = 243;
-  let targetDay = 256;
-  let result = 0;
-  let isJulian = false;
-  let isGregorian = false;
 
-  if (yr >= 1917) {
-    isJulian = true;
-  } else {
-    isGregorian = true;
-  }
+function pageCount(n, p) {
+  // Write your code here
+  let pagesLong = n;
+  let targetPage = p;
+  let arrayPairs = [];
+  let bookPagesPairs = [];
+  let flip = 0;
 
-  if (yr === 1918) {
-    firstEight = 211;
-  }
-  if (isGregorian) {
-    if (yr % 4 === 0) {
-      isLeapYear = true;
-      if (isLeapYear) firstEight += 1;
-      result = targetDay - firstEight;
-      return `${result}.09.${yr}`;
-    } else if (yr % 400 === 0 || (yr % 4 === 0 && !yr % 100 === 0)) {
-      isLeapYear = true;
-      if (isLeapYear) firstEight += 1;
-      result = targetDay - firstEight;
-      return `${result}.09.${yr}`;
+  for (let i = 0; i <= n; i++) {
+    if (i !== 1) {
+      arrayPairs.push([i - 1, i]);
     }
   }
+  arrayPairs = arrayPairs.slice(1);
+
+  for (let i = 0; i < arrayPairs.length; i++) {
+    if (i % 2 != 0) {
+      bookPagesPairs.push(arrayPairs[i]);
+    }
+  }
+  // console.log(bookPagesPairs);
+
+  bookPagesPairs.forEach((pagePair) => {
+    if (pagePair.includes(targetPage)) {
+      console.log("yes");
+    }
+  });
 }
 
-let yr = 1800;
+console.log(pageCount(5, 4));
 
-console.log(dayOfProgrammer(yr));
+//////////////////
+
+// Working Solution
+function sockMerchant(n, ar) {
+  // Write your code here
+  let sockTable = {};
+  let match = 0;
+  // create frequency table
+  for (let key of ar) {
+    sockTable[key] = sockTable[key];
+    sockTable[key] === undefined ? (sockTable[key] = 1) : (sockTable[key] += 1);
+  }
+  // iterate on frequency table
+  for (let prop in sockTable) {
+    if (sockTable[prop] % 2 === 0) {
+      match += sockTable[prop] / 2;
+    } else if (sockTable[prop] > 2 && sockTable[prop] % 2 !== 0) {
+      match += Math.floor(sockTable[prop] / 2);
+    }
+  }
+  return match;
+}
+
+// console.log(sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20]));
