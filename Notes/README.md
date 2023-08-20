@@ -46,5 +46,8 @@ ul#comments>li.comment{comment}\*3
 
 ## Command Shortcut for React
 
-mkdir FOLDERNAME ; cd FOLDERNAME ; npm create vite@latest . ; npm install ; npm run dev
-`ctrl + c` stop the server
+- mkdir PROJECT ; cd PROJECT ; npm create vite@latest . ; npm install ; mkdir ./src/components ; touch ./src/components/ComponentName.jsx ; echo ; cat src/index.css >> src/App.css ; rm ./src/index.css ; open -a TextEdit ./src/main.jsx ; echo ">>>Delete import './index.css<<<' " ; npm run dev
+
+- create components folder
+- clear out: index.css, App.jsx, just use App.css can copy whats on index.css to App.css, delete `import './index.css'` from main.jsx
+- `ctrl + c` stop the server
