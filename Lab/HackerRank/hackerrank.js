@@ -429,7 +429,7 @@ function divisibleSumPairs(n, k, ar) {
  * DAY OF THE PROGRAMMER
  * ----------------------
  * @link https://www.hackerrank.com/challenges/day-of-the-programmer/problem?isFullScreen=true
- * 7/61
+ * 7/61 wrong cases
  */
 
 function dayOfProgrammer(yr) {
@@ -452,7 +452,12 @@ function dayOfProgrammer(yr) {
 let yr = 2016;
 // console.log(dayOfProgrammer(yr))
 
-// https://www.hackerrank.com/challenges/sock-merchant/problem?isFullScreen=true
+/**
+ * ---------------
+ * SALES BY MATCH
+ * ---------------
+ * @link https://www.hackerrank.com/challenges/sock-merchant/problem?isFullScreen=true
+ */
 
 function sockMerchant(n, ar) {
   // Write your code here
