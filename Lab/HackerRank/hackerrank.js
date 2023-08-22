@@ -428,6 +428,7 @@ function divisibleSumPairs(n, k, ar) {
  * ----------------------
  * DAY OF THE PROGRAMMER
  * ----------------------
+ * Coding Challenge
  * @link https://www.hackerrank.com/challenges/day-of-the-programmer/problem?isFullScreen=true
  * 7/61 wrong cases
  */
@@ -456,6 +457,7 @@ let yr = 2016;
  * ---------------
  * SALES BY MATCH
  * ---------------
+ * Coding Challenge 8.18
  * @link https://www.hackerrank.com/challenges/sock-merchant/problem?isFullScreen=true
  */
 
@@ -478,3 +480,22 @@ function sockMerchant(n, ar) {
 }
 
 // console.log(sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20]));
+
+/**
+ * ----------------
+ * ANGRY PROFESSOR
+ * ----------------
+ * Coding Challenge 8.21
+ * @link https://www.hackerrank.com/challenges/angry-professor/problem?isFullScreen=true
+ */
+function angryProfessor(k, a) {
+  // Rename variables
+  let threshold = k;
+  let arrivalTimes = a;
+  // Filter for OnTimeStudents
+  let onTimeStudents = arrivalTimes.filter((time) => time <= 0);
+  return onTimeStudents.length >= threshold ? "NO" : "YES";
+}
+
+// console.log(angryProfessor(3, [-1, -3, 4, 2])); //YES
+// console.log(angryProfessor(2, [0, -1, 2, 1])); // NO

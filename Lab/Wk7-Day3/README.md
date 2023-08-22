@@ -1,0 +1,2 @@
+- We created a React [To Do App](https://github.com/m-soro/ReactToDo) in class
+- I followed a tutorial on how to build and deploy a [single page app](https://github.com/m-soro/ReactSinglePageApp)

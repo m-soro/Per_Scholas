@@ -46,6 +46,8 @@ ul#comments>li.comment{comment}\*3
 
 ## Command Shortcut for React
 
+'open -a TextEdit`
+
 ```
 mkdir PROJECT ; cd PROJECT ; npm create vite@latest . ; npm install ; mkdir ./src/components ; touch ./src/components/ComponentName.jsx ; echo ; cat src/index.css >> src/App.css ; rm ./src/index.css ; open -a TextEdit ./src/main.jsx ; echo ">>>Delete import './index.css<<<' " ; npm run dev
 ```
@@ -53,8 +55,21 @@ mkdir PROJECT ; cd PROJECT ; npm create vite@latest . ; npm install ; mkdir ./sr
 - `ctrl + c` stop the server
 
 - To publish in github pages:
-  - run `npm run build` - this will minify the files.
-  - in vite.config.js add build option, outDir: "docs" - will copy what's on dist folder to docs folder.
+- package.json
+
+```
+ "scripts": {
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build --base='./'",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+```
+
+- run `npm run build` - this will minify the files.
+
+- in vite.config.js add build option, outDir: "docs" - will copy what's on dist folder to docs folder.
 
 ```
 export default defineConfig({
@@ -66,6 +81,3 @@ export default defineConfig({
 ```
 
 - in GitHub pages under Build and deployment, select **/docs**
-- Before pushing to Github, add - **" . "** in **index.html** found in **docs folder**
-  - <script type="module" crossorigin src="./assets/[minified].js"></script>
-  - <link rel="stylesheet" href="./assets/[minified].css" />
