@@ -499,3 +499,28 @@ function angryProfessor(k, a) {
 
 // console.log(angryProfessor(3, [-1, -3, 4, 2])); //YES
 // console.log(angryProfessor(2, [0, -1, 2, 1])); // NO
+
+/**
+ * ----------------------------
+ * BEAUTIFUL DAYS AT THE MOVIE
+ * ----------------------------
+ * Code Challenge 8.22.23
+ * @link https://www.hackerrank.com/challenges/beautiful-days-at-the-movies/problem?isFullScreen=true
+ */
+
+function beautifulDays(i, j, k) {
+  let end = j;
+  let divisor = k;
+  let numBeautifulDays = 0;
+
+  for (let start = i; start <= end; start++) {
+    let reversedDay = start.toString().split("").reverse().join("");
+    reversedDay = Number(reversedDay);
+
+    let diff = Math.abs(start - reversedDay);
+    if (diff % divisor === 0) numBeautifulDays++;
+  }
+  return numBeautifulDays;
+}
+
+// console.log(beautifulDays(20, 23, 6));
