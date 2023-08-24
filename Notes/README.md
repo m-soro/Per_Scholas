@@ -81,3 +81,9 @@ export default defineConfig({
 ```
 
 - in GitHub pages under Build and deployment, select **/docs**
+
+---
+
+# REACT TRAINING NOTES
+
+[React training](https://github.com/m-soro/React-Training)
